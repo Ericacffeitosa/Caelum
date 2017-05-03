@@ -7,8 +7,18 @@ public class PalavraPrima {
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Consultar palavra prima: ");
-		String palavra = scan.nextLine();
+		String palavra = "";		
+		int quantCaracteres = 0;
+		while (quantCaracteres == 0) {
+			System.out.println("Consultar palavra prima: ");
+			palavra = scan.nextLine();
+			quantCaracteres = palavra.length();
+			
+			if (quantCaracteres < 1 || quantCaracteres > 20) {
+				System.out.println("Informe palavra de 1 a 20 caracteres.");
+				quantCaracteres = 0;
+			}
+		}
 		scan.close();
 		
 		int soma= 0;
@@ -21,6 +31,7 @@ public class PalavraPrima {
 				//As letras maiusculas começam em 39
 				soma = soma + ((int)letra) - 38; 
 			}
+			
 //			System.out.println("char: "+palavra.charAt(i)+" int: "+((int) palavra.charAt(i)) );			
 		} 
 		
